@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/ANicon111/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/ANicon111/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/ANicon111/assets/icons/favicon-16x16.png">
+    <link rel="manifest" href="/ANicon111/assets/icons/site.webmanifest">
+    <link rel="mask-icon" href="/ANicon111/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/ANicon111/assets/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/ANicon111/assets/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+    <img src="assets/icon.png" style="position: fixed;width: 100vmin;z-index: -1;" />
+    <span class="top">
+        <p class="supportUkraine willBeVisible">I stand with Ukraine!</p>
+        <p class="introduction blueAnimation left willBeVisible">Good day, my name is</p>
+        <p class="name yellowAnimation willBeVisible">Albu Nicon Georgian</p>
+        <p class="nickname blueAnimation right willBeVisible">and I'm also known as ANicon111 online.</p>
+        <p class="description yellowAnimation willBeVisible">I'm a full stack developer with experience in using Html,
+            CSS, JS, Flutter, PHP and C/C++.</p>
+        <p class="title blueAnimation willBeVisible">And these are some of the projects I had the opportunity to work
+            on:</p>
+    </span><br>
+    <a href="https://federatiahermes.ro/app">
+        <span class="game right willBeVisible hover">
+            <span>
+                <p class="title">Federația Hermes</p><br />
+                <p class="description">An app for the romanian union "Federația Hermes"</p>
+            </span>
+            <img src="assets/federatiahermes.png" />
+
+        </span>
+    </a><br />
+    <a href="/proceduralclicker/">
+        <span class="game left willBeVisible hover">
+            <img src="assets/proceduralclicker.png" />
+            <span>
+                <p class="title">Procedural Clicker</p><br />
+                <p class="description">A cookie clicker with procedurally generated characters</p>
+            </span>
+        </span>
+    </a><br />
+    <a href="/infinimines/">
+        <span class="game right willBeVisible hover">
+            <span>
+                <p class="title">Infini-Mines</p><br />
+                <p class="description">An infinite mine clearing game</p>
+            </span>
+            <img src="assets/infinimines.png" />
+
+        </span>
+    </a><br />
+    <a href="/quintis/">
+        <span class="game left willBeVisible hover">
+            <img src="assets/quintis.png" />
+            <span>
+                <p class="title">Quintis</p><br />
+                <p class="description">A block stacking game with customisable pieces</p>
+            </span>
+        </span>
+    </a><br />
+    <a href="/mines/">
+        <span class="game right willBeVisible hover">
+            <span>
+                <p class="title">Mines</p><br />
+                <p class="description">The classic mine clearing game</p>
+            </span>
+            <img src="assets/mines.png" />
+
+        </span>
+    </a><br />
+    <a href="/tictactoe/">
+        <span class="game left willBeVisible hover">
+            <img src="assets/tictactoe.png" />
+            <span>
+                <p class="title">TicTacToe</p><br />
+                <p class="description">The classic</p>
+            </span>
+        </span>
+    </a><br />
+    <span class="links toBeRevealed hover">
+        <a href="https://github.com/ANicon111">
+            <img src="assets/github.png" />
+        </a>
+    </span>
+</body>
+
+<footer>
+    <script>
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        var elements = document.body.getElementsByClassName('willBeVisible');
+        for (let i in elements) {
+            try {
+                if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
+                    if (elements[i].classList.contains("game"))
+                        elements[i].setAttribute("style", "animation-delay:5s;");
+                    elements[i].classList.add("visible");
+                }
+            } catch (error) { }
+        }
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        if (document.cookie != "") {
+            for (let i in elements) {
+                try {
+                    elements[i].setAttribute("style", "animation-delay:0s;");
+                    document.getElementsByClassName("supportUkraine")[0].setAttribute("style", "display:none;");
+                } catch (error) { }
+            }
+        }
+
+        setCookie("visited", "true", 30);
+
+        window.addEventListener('scroll', function (event) {
+            for (let i in elements) {
+                try {
+                    if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
+                        elements[i].classList.add("visible");
+                    }
+                } catch (error) { }
+            }
+        }, false);
+        window.addEventListener('resize', function (event) {
+            for (let i in elements) {
+                try {
+                    if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
+                        elements[i].classList.add("visible");
+                    }
+                } catch (error) { }
+            }
+        }, false);
+    </script>
+</footer>
+
+</html>
