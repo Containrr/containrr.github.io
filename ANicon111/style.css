@@ -18,11 +18,25 @@
     100% {opacity: 1;} 
  } 
 
-body {
+ @keyframes expandBody {
+    0% {clip-path: inset( 0 0 calc( 100% - 100vmin ) 0 );}
+    100% {clip-path: inset( 0 0 0 0 );}
+ }
+
+body {   
+    background-color: #191919;
+    background-image: url("assets/icon.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
     font-family: 'Quicksand', sans-serif;
-    background: #191919;
     text-align: center;
     color: white;
+    clip-path: inset( 0 0 calc( 100% - 100vmin ) 0 );
+    animation-name: expandBody;
+    animation-duration: 1s;
+    animation-delay: 7.5s;
+    animation-fill-mode: forwards;
 }
 
 .hover:hover{
@@ -92,24 +106,24 @@ body {
 
 .top>.name {
     font-size: 10vmin;
-    animation-delay: 2s;
+    animation-delay: 2.5s;
 }
 
 .top>.nickname {
     font-size: 4vmin;
-    animation-delay: 3s;
+    animation-delay: 3.5s;
 }
 
 .top>.description {
     margin-top: 20vmin;
     font-size: 4.5vmin;
-    animation-delay: 4s;
+    animation-delay: 5s;
 }
 
 .top>.title {
     margin-top: 20vmin;
     font-size: 6vmin;
-    animation-delay: 5s;
+    animation-delay: 6.5s;
 }
 
 .game{
@@ -118,7 +132,6 @@ body {
     height: 30vmin;
     background-color: rgba(0,0,0,0.5);
     border-radius: 1vmin;
-    opacity: 0;
     color:white;
     margin-top: 5vmin;
 }
@@ -152,3 +165,4 @@ body {
     width:15vmin;
     height: 15vmin;
 }
+

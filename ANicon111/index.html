@@ -18,19 +18,18 @@
 </head>
 
 <body>
-    <img src="assets/icon.png" style="position: fixed;width: 100vmin;z-index: -1;" />
     <span class="top">
-        <p class="supportUkraine willBeVisible">I stand with Ukraine!</p>
-        <p class="introduction blueAnimation left willBeVisible">Good day, my name is</p>
-        <p class="name yellowAnimation willBeVisible">Albu Nicon Georgian</p>
-        <p class="nickname blueAnimation right willBeVisible">and I'm also known as ANicon111 online.</p>
-        <p class="description yellowAnimation willBeVisible">I'm a full stack developer with experience in using Html,
+        <p class="supportUkraine">I stand with Ukraine!</p>
+        <p class="introduction blueAnimation left visible">Good day, my name is</p>
+        <p class="name yellowAnimation visible">Albu Nicon Georgian</p>
+        <p class="nickname blueAnimation right visible">and I'm also known as ANicon111 online.</p>
+        <p class="description yellowAnimation visible">I'm a full stack developer with experience in using Html,
             CSS, JS, Flutter, PHP and C/C++.</p>
-        <p class="title blueAnimation willBeVisible">And these are some of the projects I had the opportunity to work
+        <p class="title blueAnimation visible">And these are some of the projects I had the opportunity to work
             on:</p>
     </span><br>
     <a href="https://federatiahermes.ro/app">
-        <span class="game right willBeVisible hover">
+        <span class="game right visible hover">
             <span>
                 <p class="title">Federația Hermes</p><br />
                 <p class="description">An app for the romanian union "Federația Hermes"</p>
@@ -40,7 +39,7 @@
         </span>
     </a><br />
     <a href="/proceduralclicker/">
-        <span class="game left willBeVisible hover">
+        <span class="game left visible hover">
             <img src="assets/proceduralclicker.png" />
             <span>
                 <p class="title">Procedural Clicker</p><br />
@@ -49,7 +48,7 @@
         </span>
     </a><br />
     <a href="/infinimines/">
-        <span class="game right willBeVisible hover">
+        <span class="game right visible hover">
             <span>
                 <p class="title">Infini-Mines</p><br />
                 <p class="description">An infinite mine clearing game</p>
@@ -59,7 +58,7 @@
         </span>
     </a><br />
     <a href="/quintis/">
-        <span class="game left willBeVisible hover">
+        <span class="game left visible hover">
             <img src="assets/quintis.png" />
             <span>
                 <p class="title">Quintis</p><br />
@@ -68,7 +67,7 @@
         </span>
     </a><br />
     <a href="/mines/">
-        <span class="game right willBeVisible hover">
+        <span class="game right visible hover">
             <span>
                 <p class="title">Mines</p><br />
                 <p class="description">The classic mine clearing game</p>
@@ -78,7 +77,7 @@
         </span>
     </a><br />
     <a href="/tictactoe/">
-        <span class="game left willBeVisible hover">
+        <span class="game left visible hover">
             <img src="assets/tictactoe.png" />
             <span>
                 <p class="title">TicTacToe</p><br />
@@ -86,7 +85,7 @@
             </span>
         </span>
     </a><br />
-    <span class="links toBeRevealed hover">
+    <span class="links visible hover">
         <a href="https://github.com/ANicon111">
             <img src="assets/github.png" />
         </a>
@@ -98,53 +97,18 @@
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
         }
-        var elements = document.body.getElementsByClassName('willBeVisible');
-        for (let i in elements) {
-            try {
-                if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
-                    if (elements[i].classList.contains("game"))
-                        elements[i].setAttribute("style", "animation-delay:5s;");
-                    elements[i].classList.add("visible");
-                }
-            } catch (error) { }
-        }
-
-        function setCookie(cname, cvalue, exdays) {
-            const d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            let expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
 
         if (document.cookie != "") {
-            for (let i in elements) {
-                try {
-                    elements[i].setAttribute("style", "animation-delay:0s;");
-                    document.getElementsByClassName("supportUkraine")[0].setAttribute("style", "display:none;");
-                } catch (error) { }
+            document.body.setAttribute("style", "animation-delay:0s;");
+            document.getElementsByClassName("supportUkraine")[0].setAttribute("style", "display:none;");
+            var elements = document.body.getElementsByClassName('visible');
+            var n = elements.length;
+            for(i = 0; i < n; i++ ){
+                elements[i].setAttribute("style", "animation-delay:0s;");
             }
         }
 
-        setCookie("visited", "true", 30);
-
-        window.addEventListener('scroll', function (event) {
-            for (let i in elements) {
-                try {
-                    if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
-                        elements[i].classList.add("visible");
-                    }
-                } catch (error) { }
-            }
-        }, false);
-        window.addEventListener('resize', function (event) {
-            for (let i in elements) {
-                try {
-                    if (elements[i].getBoundingClientRect().top <= window.innerHeight) {
-                        elements[i].classList.add("visible");
-                    }
-                } catch (error) { }
-            }
-        }, false);
+        document.cookie = "visited=true;expires=" + (new Date(Date.now() + (30 * 24 * 60 * 60 * 1000))).toUTCString() + ";path=/";
     </script>
 </footer>
 
