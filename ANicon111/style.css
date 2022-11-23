@@ -5,14 +5,6 @@
     font-display: swap;
     src: url(assets/qsandlight.ttf) format("ttf");
 }
-
-@keyframes ukraineAnimation {
-    0% {opacity: 1;font-size: 10vmin;}
-    50% {opacity: 1;}
-    99% {opacity: 0;font-size: 10vmin;} 
-    100% {font-size: 0;}
- } 
-
  @keyframes fadeIn {
     0% {opacity: 0;}
     100% {opacity: 1;} 
@@ -89,41 +81,31 @@ body {
     color: yellow;
 }
 
-.top>.supportUkraine{
-    font-size: 0;
-    animation-name: ukraineAnimation;
-    animation-fill-mode: forwards;
-    animation-duration: 2s;
-    position: absolute;
-    top:40vmin;
-}
-
 .top>.introduction {
     margin-top: 2vmin;
     font-size: 3vmin;
-    animation-delay: 2s;
 }
 
 .top>.name {
     font-size: 10vmin;
-    animation-delay: 2.5s;
+    animation-delay: .5s;
 }
 
 .top>.nickname {
     font-size: 4vmin;
-    animation-delay: 3.5s;
+    animation-delay: 1.5s;
 }
 
 .top>.description {
     margin-top: 20vmin;
     font-size: 4.5vmin;
-    animation-delay: 5s;
+    animation-delay: 3s;
 }
 
 .top>.title {
     margin-top: 20vmin;
     font-size: 6vmin;
-    animation-delay: 6.5s;
+    animation-delay: 4.5s;
 }
 
 .game{
