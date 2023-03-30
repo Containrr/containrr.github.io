@@ -1,12 +1,15 @@
 /* declarations */
 :root {
+    /*dimensions*/
     --font-size: clamp(1em, 3vmin, 3em);
     --screen-width: max(100vmin, 60vw);
     --screen-height: max(100vmin, 60vh);
+    /*colors*/
     --black: #191919;
     --black-transparent: var(--black);
     --black-transparent: rgba(25, 25, 25, 0.9);
-    --flutter-blue: rgba(0, 199, 250, 0.5);
+    --flutter-blue: rgba(0, 199, 250, 0.8);
+    --flutter-dark-blue: rgba(0, 67, 123, 0.8);
 }
 
 
@@ -41,11 +44,21 @@
 
 @keyframes entranceAnimation {
     0% {
-        transform: translateY(-300vh);
+        transform: translateY(-300vmax);
     }
 
     100% {
         transform: none;
+    }
+}
+
+@keyframes appearAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 
@@ -91,7 +104,7 @@ a {
 }
 
 .visible {
-    transform: translateY(calc(-300vh));
+    transform: translateY(calc(-300vmax));
     animation-name: entranceAnimation;
     animation-duration: 2s;
     animation-fill-mode: forwards;
@@ -111,8 +124,12 @@ a {
 }
 
 .top>.blur {
+    opacity: 0;
     background-color: var(--black-transparent);
-    animation-delay: 0.25s;
+    animation-name: appearAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
     filter: blur(5vmin);
     position: absolute;
     top: -10%;
@@ -174,8 +191,8 @@ a {
 
 .game {
     display: inline-block;
-    width: 98vmin;
-    height: 30vmin;
+    width: calc(0.96 * var(--screen-width));
+    height: calc(0.3 * var(--screen-width));
     background-color: var(--black-transparent);
     color: white;
     line-height: normal;
@@ -207,17 +224,26 @@ a {
     margin: 3vmin 0 0 0;
 }
 
-.flutter {
-    border: 1vmin solid var(--flutter-blue);
-    border-radius: 1vmin;
-    width: calc(98vmin);
+.bottom {
     position: absolute;
     top: 100vmin;
-    left: calc(50% - 49vmin);
+    left: calc(50% - 0.5 * var(--screen-width));
+    width: var(--screen-width);
+}
+
+.section {
+    border-radius: 1vmin;
+    width: 96%;
+    margin: auto;
+    position: relative;
     margin: auto;
     outline: none;
     line-height: 12px;
-    animation-delay: 5s;
+}
+
+.flutter {
+    border: 1vmin solid var(--flutter-blue);
+    animation-delay: 6s;
 }
 
 .flutterHover {
@@ -225,7 +251,7 @@ a {
 }
 
 .flutterHover:hover {
-    background-color: var(--flutter-blue)
+    background-color: var(--flutter-dark-blue)
 }
 
 .flutter>.description {
@@ -239,14 +265,13 @@ a {
 .links {
     display: inline-block;
     width: var(--screen-width);
-    position: absolute;
-    top: 270vmin;
+    position: relative;
     left: max(50% - var(--screen-width) / 2);
     background-color: var(--black-transparent);
     border-radius: 1vmin;
     margin-top: 1vmin;
     padding: 1vmin 0 1vmin 0;
-    animation-delay: 5s;
+    animation-delay: 7s;
 }
 
 .links>a>img {
