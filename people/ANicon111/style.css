@@ -8,11 +8,18 @@
 
 @keyframes entranceAnimation {
     0% {
-        transform: translateY(-300vmax);
+        transform: translateY(-150vmax);
+        opacity: 0;
+    }
+
+    80%{
+        transform: translateY(5vmax);
+        opacity: 1;
     }
 
     100% {
         transform: none;
+        opacity: 1;
     }
 }
 
@@ -25,6 +32,7 @@
         opacity: 1;
     }
 }
+
 .background {
     width: 100vmin;
     animation-delay: 0.1s;
@@ -42,11 +50,12 @@
 }
 
 .visible {
-    transform: translateY(calc(-300vmax));
+    transform: translateY(calc(-100vmax));
+    opacity: 0;
     animation-name: entranceAnimation;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.76, 0, 0.42, 1.22);
+    animation-timing-function: cubic-bezier(.5,0,.5,1);
 }
 
 .top {

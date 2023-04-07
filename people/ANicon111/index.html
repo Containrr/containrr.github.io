@@ -41,51 +41,6 @@
     <div class="bottom">
         <div class="section flutter visible">
             <img src="assets/logos/flutter.svg" class="description"></img>
-            <a href="/sketches/rubikssolver/">
-                <span class="screenshotProject left hoverable">
-                    <img src="assets/screenshots/rubikssolver.png" />
-                    <span>
-                        <p class="title">Rubik's Solver</p><br />
-                        <p class="description">An arbitrary size magic cube solver</p>
-                    </span>
-                </span>
-            </a>
-            <a href="/sketches/infinimines/">
-                <span class="screenshotProject right hoverable">
-                    <span>
-                        <p class="title">Infini-Mines</p><br />
-                        <p class="description">An infinite mine clearing game</p>
-                    </span>
-                    <img src="assets/screenshots/infinimines.png" />
-                </span>
-            </a>
-            <a href="/sketches/quintis/">
-                <span class="screenshotProject left hoverable">
-                    <img src="assets/screenshots/quintis.png" />
-                    <span>
-                        <p class="title">Quintis</p><br />
-                        <p class="description">A block stacking game with customisable pieces</p>
-                    </span>
-                </span>
-            </a>
-            <a href="/sketches/tictactoe/">
-                <span class="screenshotProject right hoverable">
-                    <span>
-                        <p class="title">TicTacToe</p><br />
-                        <p class="description">The classic</p>
-                    </span>
-                    <img src="assets/screenshots/tictactoe.png" />
-                </span>
-            </a>
-            <a href="/sketches/proceduralclicker/">
-                <span class="screenshotProject left hoverable">
-                    <img src="assets/screenshots/proceduralclicker.png" />
-                    <span>
-                        <p class="title">Procedural Clicker</p><br />
-                        <p class="description">A cookie clicker with procedurally generated characters</p>
-                    </span>
-                </span>
-            </a>
         </div>
         <span class="links visible">
             <a href="https://www.instagram.com/ANicon101/">
@@ -119,7 +74,57 @@
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
         }
+        //projects
+        class Project {
+            constructor(id, title, description) {
+                this.id = id;
+                this.title = title;
+                this.description = description;
+            }
+        }
+        const projects = new Map([
+            ["flutter", [
+                new Project("rubikssolver", "Rubik's Solver", "An arbitrary size magic cube solver"),
+                new Project("keyrunner", "Key Runner", "A minimalist speed typing game"),
+                new Project("infinimines", "Infini-Mines", "An infinite mine clearing game"),
+                new Project("quintis", "Quintis", "A block stacking game with customisable pieces"),
+                new Project("tictactoe", "TicTacToe", "The classic"),
+                new Project("proceduralclicker", "Procedural Clicker", "A cookie clicker with procedurally generated characters"),
+            ]]
+        ]);
+        //adding projects
+        var left = true;
+        projects.forEach(function (value, key) {
+            var currentProject = document.body.getElementsByClassName(key)[0];
 
+            for (const index in value) {
+                const text = value[index];
+                if (left) {
+                    currentProject.innerHTML +=
+                        '<a href="/sketches/' + text.id + '/">\
+                            <span class="screenshotProject left hoverable">\
+                                <img src="assets/screenshots/'+ text.id + '.png" />\
+                                <span>\
+                                    <p class="title">'+ text.title + '</p><br />\
+                                    <p class="description">'+ text.description + '</p>\
+                                </span>\
+                            </span>\
+                        </a>';
+                } else {
+                    currentProject.innerHTML +=
+                        '<a href="/sketches/' + text.id + '/">\
+                            <span class="screenshotProject right hoverable">\
+                                <span>\
+                                    <p class="title">'+ text.title + '</p><br />\
+                                    <p class="description">'+ text.description + '</p>\
+                                </span>\
+                                <img src="assets/screenshots/'+ text.id + '.png" />\
+                            </span>\
+                        </a>'
+                }
+                left = !left;
+            }
+        })
         if (document.cookie != "") {
             var elements = document.body.getElementsByClassName('visible');
             var n = elements.length;
