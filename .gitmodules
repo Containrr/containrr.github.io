@@ -1,0 +1,6 @@
+[submodule "people/anicon111.github.io"]
+	path = people/anicon111.github.io
+	url = git@github.com:ANicon111/anicon111.github.io.git
+[submodule "people/ANicon111"]
+	path = people/ANicon111
+	url = https://github.com/ANicon111/anicon111.github.io.git
