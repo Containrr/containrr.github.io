@@ -59118,10 +59118,10 @@ au(){var s=B.lW[B.da.rq(100)]
 this.e=s
 this.r=s.length
 this.aM()},
-K(b1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=this,a6=null,a7="Hack",a8={},a9=B.c.Y(a5.e,0,a5.w),b0=a9.split(" ").length
+K(b0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5=this,a6=null,a7="Hack",a8={},a9=B.c.Y(a5.e,0,a5.w)
 a8.a=0
 s=a5.d
-r=s.gxk()>100?a8.a=6e4*b0/s.gxk():0
+r=s.gxk()>100?a8.a=12e3*a9.length/s.gxk():0
 a8.b=0
 q=a5.y
 q=q>0?a8.b=a5.w/q*100:0
@@ -59130,13 +59130,13 @@ o=a5.w
 n=o+a5.x
 m=B.c.Y(p,o,n)
 l=B.c.d1(p,n)
-k=new A.WC(b1)
+k=new A.WC(b0)
 n=t.w
-p=b1.S(n).f
+p=b0.S(n).f
 k.b=!$.agt.i(0,p.a)
-$.agt=b1.S(n).f.a
-p=k.c=(b1.S(n).f.a.a-b1.S(n).f.e.a-b1.S(n).f.e.c)/100
-n=k.d=(b1.S(n).f.a.b-b1.S(n).f.e.b-b1.S(n).f.e.d)/100
+$.agt=b0.S(n).f.a
+p=k.c=(b0.S(n).f.a.a-b0.S(n).f.e.a-b0.S(n).f.e.c)/100
+n=k.d=(b0.S(n).f.a.b-b0.S(n).f.e.b-b0.S(n).f.e.d)/100
 o=Math.min(p,n)
 j=k.gaQ()
 i=k.gaQ()
