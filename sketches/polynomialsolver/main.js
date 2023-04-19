@@ -40,7 +40,7 @@ async function getResults() {
     for (const key in val) {
       if (Object.hasOwnProperty.call(val, key)) {
         const elem = val[key];
-        polynomialSolutionArea.innerHTML += '<div class="result" style="top:' + (50 - 50 * elem.im / scale) + '%;left: ' + (50 + 50 * elem.re / scale) + '%;"><p>' + elem.string + '</p></div>';
+        polynomialSolutionArea.innerHTML += '<div class="result-box" style="top:calc(' + (50 - 50 * elem.im / scale) + '% - 5vmin);left: calc(' + (50 + 50 * elem.re / scale) + '% - 20vmin);"><div></div><p>' + elem.string + '</p></div>';
       }
     }
   } else {
