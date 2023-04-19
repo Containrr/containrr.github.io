@@ -1,0 +1,23 @@
+{
+  "name": "polynomial-solver",
+  "collaborators": [
+    "ANicon111"
+  ],
+  "description": "Polynomial Solver",
+  "version": "0.0.0",
+  "license": "GPL3",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "files": [
+    "polynomial_solver_bg.wasm",
+    "polynomial_solver.js",
+    "polynomial_solver.d.ts"
+  ],
+  "module": "polynomial_solver.js",
+  "types": "polynomial_solver.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
